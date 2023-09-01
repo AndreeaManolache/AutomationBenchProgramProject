@@ -62,7 +62,7 @@ public class StringExcercises {
         //Exercise 6
         //Given a string, return true if it ends in "ly".
 
-         // String endsL
+          // String endsL
         int lengthOfWord = str.length();
         String endOfWord = "ly";
         if (lengthOfWord < 2) {
