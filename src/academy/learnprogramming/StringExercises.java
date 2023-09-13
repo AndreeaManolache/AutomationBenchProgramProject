@@ -12,7 +12,7 @@ package academy.learnprogramming;
 import javax.swing.*;
 import java.sql.SQLOutput;
 
-public class StringExcercises {
+public class StringExercises {
 
     public static void main(String[] args) {
         String name = "Bob";
@@ -329,8 +329,144 @@ public class StringExcercises {
         String wordTag="Hello";
         System.out.println("<" + tag + ">" + wordTag + "</" + tag + ">");
 
+        /*Exercise 24
+        Given a string, return the string made of its first two chars, so the String "Hello" yields "He". If the string is shorter than length 2,
+        return whatever there is, so "X" yields "X",  and the empty string "" yields the empty string "". Note that str.length() returns the length of a string.
+        firstTwo("Hello") → "He"
+        firstTwo("abcdefg") → "ab"
+        firstTwo("ab") → "ab"
+         */
+
+        String firstTwo="Hello";
+        int lenfirstTwo=firstTwo.length();
+        if(lenfirstTwo > 2)
+            System.out.println(firstTwo.substring(0,2));
+        else
+            System.out.println(firstTwo);
+
+        /*Exercise 25
+        Given 2 strings, a and b, return a string of the form short+long+short, with the shorter string on the outside and the longer string on the inside.
+        The strings will not be the same length, but they may be empty (length 0).
+         */
+
+        String comboString1="Hello";
+        String comboString2="hi";
+        System.out.println(comboString2 + comboString1 + comboString2);
+
+        /*Exercise 26
+        Given a string, return a "rotated right 2" version where the last 2 chars are moved to the start. The string length will be at least 2.
+         */
+
+        String right2="Hello";
+        if(right2.length() > 2)
+            System.out.println(right2.substring(right2.length()-2) + right2.substring(0, right2.length()-2));
+        else
+            System.out.println(right2);
+
+        /*Exercise 27
+        Given a string of even length, return a string made of the middle two chars, so the string "string" yields "ri". The string length will be at least 2.
+         */
+
+        String middleTwo="string";
+        if(middleTwo.length() >2)
+            System.out.println(middleTwo.substring(middleTwo.length()/2 -1, middleTwo.length()/2 + 1));
+
+        /*Exercise 28
+        Given a string and an index, return a string length 2 starting at the given index. If the index is too big or too small to define a string length 2, use the first 2 chars.
+         The string length will be at least 2.
+         */
+
+        String twoChar="java";
+        int index=2;
+        if(index + 2 >twoChar.length() || index<0 )
+        System.out.println(twoChar.substring(0,2));
+        else
+            System.out.println(twoChar.substring(index , index + 2));
+
+       /*Exsercise 29
+       Given a string, return a string length 2 made of its first 2 chars. If the string length is less than 2, use '@' for the missing chars.
+        atFirst("hello") → "he"
+        atFirst("hi") → "hi"
+        atFirst("h") → "h@"
+        */
+
+        String atFirst="h";
+
+        if(atFirst.length() == 0)
+            System.out.println("@@");
+
+        if(atFirst.length() == 1)
+            System.out.println(atFirst + "@");
+        else
+            System.out.println(atFirst.substring(0, 2));
+
+        /*Exercise 30
+
+        Given a string of any length, return a new string where the last 2 chars, if present, are swapped, so "coding" yields "codign".
+         */
+
+        String lastTwo="coding";
+        if(lastTwo.length() < 2) {
+            System.out.println(lastTwo);
+        }else
+            System.out.println(lastTwo.substring(0, lastTwo.length() - 2) + lastTwo.charAt(str.length() - 1) + lastTwo.charAt(lastTwo.length() - 2));
+
+        //Exercise 31
+       // Given two strings, append them together (known as "concatenation") and return the result. However, if the strings are different lengths,
+        // omit chars from the longer string so it is the same length as the shorter string. So "Hello" and "Hi" yield "loHi". The strings may be any length.
+
+        String miniCat="Hello";
+        String miniCat2="Hi";
+        int min = Math.min(miniCat.length(), miniCat2.length());
+        System.out.println(miniCat.substring(miniCat.length() - min) + miniCat2.substring(miniCat2.length() - min));
+
+        /*Exercise 32
+        Given a string, return a version without the first 2 chars. Except keep the first char if it is 'a' and keep the second char if it is 'b'.
+         The string may be any length. Harder than it looks.
+        deFront("Hello") → "llo"
+        deFront("java") → "va"
+        deFront("away") → "aay"
+         */
+
+        String defront = "Hello";
+        if(defront.length() == 1 && defront.charAt(0) != 'a')
+            System.out.println("");;
+
+        if(defront.length() >= 2) {
+            if(defront.charAt(0) != 'a' && defront.charAt(1) != 'b') {
+                System.out.println(str.substring(2));
+            } else if(defront.charAt(0) != 'a') {
+                System.out.println(str.substring(1));
+            } else if(defront.charAt(1) != 'b') {
+                System.out.println("a" + str.substring(2));
+            }
+        }
+        else
+            System.out.println(defront);
+
+        /*Exercise 33
+        Given a string, if one or both of the first 2 chars is 'x', return the string without those 'x' chars, and otherwise return the string unchanged.
+         This is a little harder than it looks.
+        withoutX2("xHi") → "Hi"
+        withoutX2("Hxi") → "Hi"
+        withoutX2("Hi") → "Hi"
+         */
+
+         String withoutX2="xHi";
+        if(withoutX2.length() == 1 && withoutX2.charAt(0) == 'x')
+            System.out.println("");
+
+        if(withoutX2.length() >= 2) {
+            if(withoutX2.charAt(0) == 'x' && withoutX2.charAt(1) == 'x') {
+                System.out.println(withoutX2.substring(2));
+            } else if(withoutX2.charAt(0) == 'x') {
+                System.out.println(withoutX2.substring(1));
+            } else if(withoutX2.charAt(1) == 'x') {
+                System.out.println(withoutX2.charAt(0) + withoutX2.substring(2));
+            }
+        }
+        else
+            System.out.println(withoutX2);
 
     }
 }
-
-
