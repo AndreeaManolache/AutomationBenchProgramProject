@@ -52,4 +52,5 @@ public class Main {
         System.out.printf("%s %s %s %n" , x1, y1, z1);
 
     }
+
 }
